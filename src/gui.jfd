@@ -1,0 +1,303 @@
+JFDML JFormDesigner: "6.0.0.0.84" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0"
+			"$rowSpecs": "0"
+			"$hGap": 25
+			"$vGap": 25
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "frame"
+			"$sizePolicy": 1
+			"$locationPolicy": 1
+			"title": "Litt Warriors Guild"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "0, 0"
+				"$rowSpecs": "0, 0, 0"
+				"$hGap": 5
+				"$vGap": 5
+				"$alignLeft": true
+				"$alignTop": true
+			} ) {
+				name: "mainPanel"
+				"border": new javax.swing.border.EmptyBorder( 25, 25, 25, 25 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "runSettings"
+					"border": new javax.swing.border.TitledBorder( null, "Main Settings", 2, 0 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0"
+						"$rowSpecs": "0, 0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "runSettingsContent"
+						"border": new javax.swing.border.EmptyBorder( 15, 15, 15, 15 )
+						add( new FormComponent( "javax.swing.JRadioButton" ) {
+							name: "onlyCollect"
+							"text": "Only Collect Tokens"
+							"$buttonGroup": new FormReference( "selectedMode" )
+							"selected": true
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JRadioButton" ) {
+							name: "collectAndKill"
+							"text": "Collect Tokens & Kill Cyclops"
+							"$buttonGroup": new FormReference( "selectedMode" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+						} )
+						add( new FormComponent( "javax.swing.JRadioButton" ) {
+							name: "onlyKill"
+							"text": "Only Kill Cyclops"
+							"$buttonGroup": new FormReference( "selectedMode" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 2
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "tokenSettings"
+					"border": new javax.swing.border.TitledBorder( null, "Token Settings", 2, 0 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0, 0"
+						"$rowSpecs": "0, 0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "tokenSettingsContent"
+						"border": new javax.swing.border.EmptyBorder( 15, 15, 15, 15 )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "armourLabel"
+							"text": "Armour:"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "selectedArmour"
+							"model": new javax.swing.DefaultComboBoxModel {
+								selectedItem: "Mith"
+								addElement( "Mith" )
+								addElement( "Addy" )
+								addElement( "Rune" )
+							}
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "fightAtLabel"
+							"text": "Fight Cyclops At 250 Tokens:"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JSlider" ) {
+							name: "fightAtSlider"
+							"value": 250
+							"maximum": 5000
+							"minimum": 250
+							"minorTickSpacing": 5
+							"snapToTicks": true
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "fightAtSliderStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 2
+							"gridwidth": 2
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "miscSettings"
+					"border": new javax.swing.border.TitledBorder( null, "Misc Settings", 2, 0 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0"
+						"$rowSpecs": "0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "miscSettingsContent"
+						"border": new javax.swing.border.EmptyBorder( 15, 15, 15, 15 )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "useQuickPrayer"
+							"text": "Use Quick Prayers"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "lootAndBury"
+							"text": "Loot & Bury Bones"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 1
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "cyclopsSettings"
+					"border": new javax.swing.border.TitledBorder( null, "Cyclops Settings", 2, 0 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0"
+						"$rowSpecs": "0, 0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "cyclopsSettingsPanel"
+						"border": new javax.swing.border.EmptyBorder( 15, 15, 15, 15 )
+						add( new FormComponent( "javax.swing.JRadioButton" ) {
+							name: "progressive"
+							"text": "Progressive (Loots Best Defender)"
+							"$buttonGroup": new FormReference( "selectedFloor" )
+							"selected": true
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JRadioButton" ) {
+							name: "campTop"
+							"text": "Camp Top Floor (Loots Defenders Upto Rune)"
+							"$buttonGroup": new FormReference( "selectedFloor" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+						} )
+						add( new FormComponent( "javax.swing.JRadioButton" ) {
+							name: "campBottom"
+							"text": "Camp Bottom Floor (Loots Dragon Defenders)"
+							"$buttonGroup": new FormReference( "selectedFloor" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 2
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+					"gridy": 1
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "footSettings"
+					"border": new javax.swing.border.TitledBorder( null, "Food Settings", 2, 0 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0, 0, 0, 0, 0"
+						"$rowSpecs": "0, 0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "footSettingsContent"
+						"border": new javax.swing.border.EmptyBorder( 15, 15, 15, 15 )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "foodLabel"
+							"text": "Food:"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "food"
+							"model": new javax.swing.DefaultComboBoxModel {
+								selectedItem: "Salmon"
+								addElement( "Salmon" )
+								addElement( "Trout" )
+								addElement( "Shark" )
+								addElement( "Lobster" )
+							}
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+						} )
+						add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+							name: "hSpacer2"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 2
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "foodAmountLabel"
+							"text": "Amount:"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 3
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "foodAmount"
+							"model": new javax.swing.SpinnerNumberModel( 1, 1, 28, 1 )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 4
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "hpEatLabel"
+							"text": "Eat When HP At 50%:"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridy": 1
+							"gridwidth": 2
+						} )
+						add( new FormComponent( "javax.swing.JSlider" ) {
+							name: "hpEatSlider"
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "hpEatSliderStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 2
+							"gridy": 1
+							"gridwidth": 3
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridy": 2
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "start"
+					"text": "Start"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "startActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+					"gridy": 2
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 790, 470 )
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "selectedMode"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 485 )
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "selectedFloor"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 535 )
+		} )
+	}
+}
